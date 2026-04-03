@@ -53,3 +53,12 @@ Remote dự án môn học (nếu dùng): thêm `sellbook-j2ee` trỏ tới `htt
 3. Mỗi commit/PR có key `SWB01-XX` trong subject hoặc mô tả → tab **Development** trên issue Jira hiển thị liên kết sau vài phút.
 
 Kiểm tra: push một commit có `SWB01-68` trong message → mở issue SWB01-68 trên Jira xem đã gắn commit chưa.
+
+## Kiểm tra luồng CI sau khi push (SWB01-70)
+
+1. Push nhánh lên GitHub (`origin` hoặc `sellbook-j2ee`): `git push -u origin them-thu-vien-tao_figma` (hoặc `main`/`develop`).
+2. Vào tab **Actions** của repository → workflow **CI** phải chạy khi push vào `main`, `develop`, hoặc nhánh `them-thu-vien-tao_figma` (đã cấu hình trong `.github/workflows/ci.yml`).
+3. PR mở vào `main`/`develop` cũng kích hoạt CI.
+4. Có thể chạy thủ công: **Actions → CI → Run workflow** (`workflow_dispatch`).
+
+Nếu job đỏ: xem log bước **Build and test with Maven**; backend cần MongoDB (đã bật service `mongo:7` trên runner).
