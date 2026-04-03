@@ -39,3 +39,17 @@ git push -u origin develop
 ```
 
 Remote dự án môn học (nếu dùng): thêm `sellbook-j2ee` trỏ tới `https://github.com/LeMinhHuy020902/SELLBOOKWEB_J2EE.git` rồi `git push -u sellbook-j2ee main` (hoặc `develop`) khi sẵn sàng.
+
+## Nhánh feature & Pull Request
+
+- Pattern: `feature/SWB01-XX-mo-ta-ngan` (XX = Story hoặc Task).
+- **PR title** cùng format với commit: `SWB01-11 Dang ky tai khoan nguoi dung`.
+- Một PR thường gắn một Story hoặc một nhóm Task trong cùng Story; squash merge vẫn giữ key trong message squash.
+
+## Kết nối Jira với GitHub (SWB01-68)
+
+1. Jira **Settings → Apps → Explore more apps** → cài **GitHub for Jira** (Atlassian).
+2. Trong app: **Add organization** / **Connect repository** → chọn org/user chứa `SELLBOOKWEB_J2EE`.
+3. Mỗi commit/PR có key `SWB01-XX` trong subject hoặc mô tả → tab **Development** trên issue Jira hiển thị liên kết sau vài phút.
+
+Kiểm tra: push một commit có `SWB01-68` trong message → mở issue SWB01-68 trên Jira xem đã gắn commit chưa.
